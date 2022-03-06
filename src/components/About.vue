@@ -1,5 +1,5 @@
 <template>
-  <div>アバウト画面</div>
+  <div>About画面</div>
 </template>
 
 <script>

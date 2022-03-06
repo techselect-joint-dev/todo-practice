@@ -4,6 +4,7 @@
 
 - Vue3(Vite を用いています)
 - VueRouter
+- [TailWindCSS](https://tailwindcss.com/docs/flex-basis)
 
 > 参考記事
 >

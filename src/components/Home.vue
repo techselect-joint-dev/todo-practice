@@ -1,5 +1,5 @@
 <template>
-  <div>Home画面</div>
+  <div>ホーム画面</div>
 </template>
 
 <script>

@@ -4,7 +4,7 @@
 
 - Vue3(Vite を用いて構築)
 - VueRouter
-- [TailWindCSS](https://tailwindcss.com/docs/flex-basis)
+- [TailwindCSS](https://tailwindcss.com/docs/flex-basis)
 - Netlify によるデプロイ
 
 ## 今後導入したい

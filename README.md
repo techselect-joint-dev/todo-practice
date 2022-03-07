@@ -5,7 +5,6 @@
 - Vue3(Vite を用いています)
 - VueRouter
 - [TailWindCSS](https://tailwindcss.com/docs/flex-basis)
-- Jest 導入したい
 - Netlify によるデプロイ
 
 ## 今後導入したい

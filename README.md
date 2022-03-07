@@ -15,7 +15,33 @@
 参考記事
 
 - [Vite で Vue3 + VueRouter + TailwindCSS の環境をつくる ②](https://www.sk-lab.co.jp/archives/11217)
-- [TailWindCSS を始めようとしている人へ](https://zenn.dev/nbr41to/articles/276f40041ad9fe)
+- [TailwindCSS を始めようとしている人へ](https://zenn.dev/nbr41to/articles/276f40041ad9fe)
+
+# ディレクトリ構成
+
+```
+├── src
+│   ├── App.vue
+│   ├── assets
+│   │   └── logo.png
+│   ├── components
+│   │   ├── modules
+│   │   │   └── XXX.vue
+│   │   └── pages
+│   │       └── XXX.vue
+│   ├── index.css
+│   ├── main.js
+│   └── router
+│       └── index.js
+```
+
+- `modules`
+
+  再利用可能なコンポーネント群です。どんどんぶち込んでいきます。
+
+- `pages`
+
+  modules を使ってページを構成します。再利用しないものならばここに直接書いたりもします。vue-router から呼ばれます。
 
 # Git を使った共同開発
 

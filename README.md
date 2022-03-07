@@ -12,9 +12,10 @@
 - Jest
 - TypeScript
 
-> 参考記事
->
-> [Vite で Vue3 + VueRouter + TailwindCSS の環境をつくる ②](https://www.sk-lab.co.jp/archives/11217)
+参考記事
+
+- [Vite で Vue3 + VueRouter + TailwindCSS の環境をつくる ②](https://www.sk-lab.co.jp/archives/11217)
+- [TailWindCSS を始めようとしている人へ](https://zenn.dev/nbr41to/articles/276f40041ad9fe)
 
 # Git を使った共同開発
 

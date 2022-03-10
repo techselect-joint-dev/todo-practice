@@ -10,6 +10,7 @@
     </ul>
     <router-view></router-view> -->
   <!-- ここからToDoを実装していく -->
+  <input type="text" class="border" v-model="task"><button @click="addTodo">追加</button>
   <div class="container mx-auto py-10">
     <TodoList :todos="todos" />
   </div>
@@ -25,11 +26,17 @@ export default {
   setup() {
     const newTodo = ref("");
     const todos = ref([
-      { content: "Todo1", isDone: false },
-      { content: "Todo2", isDone: true },
-      { content: "Todo3", isDone: false },
+      JSON.parse(localStorage.getItem('todoList'))
     ]);
-    return { newTodo, todos };
+
+    let task = ref();
+    const addTodo=()=>{
+      todos.value.push({content: task.value, isDone: false});
+      localStorage.setItem('todoList', JSON.stringify(todos.value))
+      console.log(todos.value);
+      console.log(localStorage)
+    }
+    return { newTodo, todos, task, addTodo};
   },
 };
 </script>

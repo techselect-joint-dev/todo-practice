@@ -10,8 +10,15 @@
     </ul>
     <router-view></router-view> -->
   <!-- ここからToDoを実装していく -->
-  <input type="text" class="border" v-model="task"><button @click="addTodo">追加</button>
   <div class="container mx-auto py-10">
+    <div class="mx-auto flex w-2/4">
+      <input
+        type="text"
+        class="w-85 hadow focus:shadow-outline mr-3 flex-1 appearance-none rounded border py-2 leading-tight text-gray-700 focus:outline-none"
+        v-model="task"
+      />
+      <button class="w-15 flex rounded border border-gray-400 bg-white py-2 px-4 font-semibold text-gray-800" @click="addTodo">追加</button>
+    </div>
     <TodoList :todos="todos" />
   </div>
 </template>
@@ -29,16 +36,16 @@ export default {
 
     const task = ref();
 
-    const addTodo=()=>{
-      todos.value.push({content: task.value, isDone: false});
-      localStorage.setItem('todoList', JSON.stringify(todos.value))
+    const addTodo = () => {
+      todos.value.push({ content: task.value, isDone: false });
+      localStorage.setItem("todoList", JSON.stringify(todos.value));
       console.log(todos.value);
-      console.log("local:",localStorage)
-    }
-    return { newTodo, todos, task, addTodo};
+      console.log("local:", localStorage);
+    };
+    return { newTodo, todos, task, addTodo };
   },
-  mounted(){
-    this.todos = JSON.parse(localStorage.getItem('todoList')) || [];
+  mounted() {
+    this.todos = JSON.parse(localStorage.getItem("todoList")) || [];
   },
 };
 </script>

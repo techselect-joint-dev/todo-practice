@@ -25,8 +25,9 @@ export default defineComponent({
   setup(props) {
     const remove=(index)=>{
       console.log(index)
-      // console.log(todos)
       props.todos.splice(index,1);
+      localStorage.removeItem("todoList")
+      localStorage.setItem('todoList', JSON.stringify(props.todos))
     }
     return {
       remove,

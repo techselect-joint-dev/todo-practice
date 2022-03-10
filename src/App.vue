@@ -25,18 +25,20 @@ export default {
   components: { TodoList },
   setup() {
     const newTodo = ref("");
-    const todos = ref([
-      JSON.parse(localStorage.getItem('todoList'))
-    ]);
+    const todos = ref();
 
-    let task = ref();
+    const task = ref();
+
     const addTodo=()=>{
       todos.value.push({content: task.value, isDone: false});
       localStorage.setItem('todoList', JSON.stringify(todos.value))
       console.log(todos.value);
-      console.log(localStorage)
+      console.log("local:",localStorage)
     }
     return { newTodo, todos, task, addTodo};
+  },
+  mounted(){
+    this.todos = JSON.parse(localStorage.getItem('todoList')) || [];
   },
 };
 </script>

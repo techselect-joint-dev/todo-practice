@@ -35,6 +35,7 @@ export default {
       console.log(todos.value);
       console.log("local:",localStorage)
     }
+
     return { newTodo, todos, task, addTodo};
   },
   mounted(){

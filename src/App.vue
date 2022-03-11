@@ -33,14 +33,10 @@ export default {
   setup() {
     const newTodo = ref("");
     const todos = ref();
-
     const task = ref();
-
     const addTodo = () => {
       todos.value.push({ content: task.value, isDone: false });
       localStorage.setItem("todoList", JSON.stringify(todos.value));
-      console.log(todos.value);
-      console.log("local:", localStorage);
     };
     return { newTodo, todos, task, addTodo };
   },

@@ -7,7 +7,7 @@
     >
       <input type="checkbox" />
       {{ todo.content }}
-      <button>削除</button>
+      <button @click="remove(index)">削除</button>
     </li>
   </div>
 </template>
@@ -22,8 +22,15 @@ export default defineComponent({
       required: false,
     },
   },
-  setup() {
+  setup(props) {
+    const remove=(index)=>{
+      console.log(index)
+      props.todos.splice(index,1);
+      localStorage.removeItem("todoList")
+      localStorage.setItem('todoList', JSON.stringify(props.todos))
+    }
     return {
+      remove,
     };
   },
 });

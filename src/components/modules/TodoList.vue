@@ -5,30 +5,30 @@
       v-for="(todo, index) in todos"
       :key="index"
     >
-      <input type="checkbox" />
-      {{ todo.content }}
-      <button @click="remove(index)">削除</button>
+      <TodoItem :todo="todo" :index="index" @remove="remove" />
     </li>
   </div>
 </template>
 
 <script>
 import { defineComponent } from "vue";
+import TodoItem from "./TodoItem.vue";
 
 export default defineComponent({
   name: "TodoList",
+  components: { TodoItem },
   props: {
     todos: {
       required: false,
     },
   },
   setup(props) {
-    const remove=(index)=>{
-      console.log(index)
-      props.todos.splice(index,1);
-      localStorage.removeItem("todoList")
-      localStorage.setItem('todoList', JSON.stringify(props.todos))
-    }
+    const remove = (index) => {
+      //インデックス番目から、1つの要素を削除
+      props.todos.splice(index, 1);
+      localStorage.removeItem("todoList");
+      localStorage.setItem("todoList", JSON.stringify(props.todos));
+    };
     return {
       remove,
     };

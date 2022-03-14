@@ -2,6 +2,7 @@
   <input type="checkbox" />
   {{ todo.content }}
   <button @click="$emit('remove', index)">削除</button>
+  <button @click="edit">編集</button>
 </template>
 <script>
 import { defineComponent } from "vue";

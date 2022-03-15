@@ -5,7 +5,7 @@
       v-for="(todo, index) in todos"
       :key="index"
     >
-      <TodoItem :todo="todo" :index="index" @remove="remove" />
+      <TodoItem :todo="todo" :index="index" @remove="remove" @edit="edit" />
     </li>
   </div>
 </template>
@@ -24,13 +24,21 @@ export default defineComponent({
   },
   setup(props) {
     const remove = (index) => {
-      //インデックス番目から、1つの要素を削除
       props.todos.splice(index, 1);
       localStorage.removeItem("todoList");
       localStorage.setItem("todoList", JSON.stringify(props.todos));
     };
+
+    const edit = (index) => {
+      // props.todos.splice(index,1)
+      let contents = window.prompt("タスクを入力してください", "");
+      props.todos.splice(index,1,{content:contents, isDone:false})
+      localStorage.removeItem("todoList");
+      localStorage.setItem("todoList", JSON.stringify(props.todos));
+    }
     return {
       remove,
+      edit,
     };
   },
 });

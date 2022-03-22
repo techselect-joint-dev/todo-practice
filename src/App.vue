@@ -16,6 +16,7 @@
         type="text"
         class="w-85 hadow focus:shadow-outline mr-3 flex-1 appearance-none rounded border py-2 leading-tight text-gray-700 focus:outline-none"
         v-model="task"
+        v-on:keydown.enter="addTodo"
       />
       <button class="w-15 flex rounded border border-gray-400 bg-white py-2 px-4 font-semibold text-gray-800" @click="addTodo">追加</button>
     </div>
